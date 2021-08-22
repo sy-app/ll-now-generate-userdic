@@ -1,5 +1,10 @@
+from print_event import *
+from update_userdic import *
+
+table_name = 'll-now-user-dict'
+bucket_name = 'll-now-material'
+
+
 def main(event, context):
-    for record in event['Records']:
-        print('EventID: ' + record['eventID'])
-        print('EventName: ' + record['eventName'])
-    print('Successfully processed %s records.' % str(len(event['Records'])))
+    print_event(event)
+    update_userdic(table_name, bucket_name)
